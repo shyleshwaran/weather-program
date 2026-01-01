@@ -7,7 +7,7 @@ from django.contrib import messages
 def home(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&appid=e8d7d6f4fe92b6dd78e2415a5c765d00&units=metric'
 
-   if request.method == "POST":
+    if request.method == "POST":
         form = CityForm(request.POST)
 
         if form.is_valid():
@@ -58,4 +58,3 @@ def delete_city(request, CName):
         messages.error(request, f"{CName} not found!")
 
     return redirect('home')
-
